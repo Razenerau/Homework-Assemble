@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class ScoreAdd : MonoBehaviour
+public class ScoreSubtract : MonoBehaviour
 {
     //==================================================================================================================
     // Variables  
@@ -25,7 +25,7 @@ public class ScoreAdd : MonoBehaviour
     private void Update()
     {
         var position = transform.position;
-        position = new Vector3(_x + Mathf.Sin(4f * Time.time), position.y, 0.0f);
+        position = new Vector3(_x + Mathf.Sin(1.5f * Time.time), position.y, 0.0f);
         position += Vector3.up * Time.deltaTime;
         transform.position = position;
     }
@@ -37,15 +37,7 @@ public class ScoreAdd : MonoBehaviour
     //Used by End Goals to set the value that will be shown in the text
     public void SetValue(int i)
     {
-        if(i < 0)
-        {
-            textMeshPro.text = "" + i;
-        }
-        else
-        {
-            textMeshPro.text = "+" + i;
-        }
-        
+        textMeshPro.text = "-" + i;
     }
 
     //Destroys the object after Invoked by Start Method  
